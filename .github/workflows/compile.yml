@@ -1,12 +1,16 @@
-name: Compile Typst Document
+name: Compile Typst
 
 # 触发条件：当推送到 main 分支、发起 PR，或手动触发时执行
 on:
   push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
-  workflow_dispatch: 
+    branches: [ "main" ]
+    paths:
+      -"**.typ"
+
+# 并发控制：如果前一个还没跑完又推了新的，就取消前一个
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -22,13 +26,12 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       # 3. 编译 Typst 文件
-      # 注意：如果你的主文件名不是 main.typ，请将下面的 main.typ 替换为你实际的文件名
       - name: Compile document
-        run: typst compile main.typ output.pdf
+        run: typst compile --font-path ./fonts main.typ output.pdf
 
       # 4. 上传编译好的 PDF 作为产物 (Artifact)
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-document
+          name: project-pdf
           path: output.pdf
