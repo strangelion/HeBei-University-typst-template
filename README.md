@@ -2,7 +2,7 @@
 
 一个为本科生毕业论文设计的 Typst 排版模板。它基于中文学术规范，帮助使用者快速完成论文的封面、章节和参考文献排版，让使用者专注于写作本身。
 
-特点
+## 特点
 
 - 简洁写作：全程使用标记式语法，告别复杂的 LaTeX 命令。
 - 符合学术规范：内置了中文论文标准格式（封面、各级标题、图表编号等）。
@@ -10,7 +10,7 @@
 - 完整的章节结构：预设了从“摘要”到“致谢”的完整文档框架。
 - 参考文献支持：集成 GB/T 7714 中文国标引用样式。
 
-使用方法
+## 使用方法
 
 1. 环境准备
 
@@ -45,7 +45,7 @@ typst compile main.typ paper.pdf
 - Typst:将主文件固定到当前打开的文档 Typst: Pin the Main File to the Currently Open Document 
 - Typst:取消固定主文件 Typst: Unpin the main file
 
-项目结构
+## 项目结构
 
 ```
 university-typst-template/
@@ -62,7 +62,7 @@ university-typst-template/
 └── LICENSE            # 项目许可证
 ```
 
-配置说明
+## 配置说明
 
 你可以在 main.typ 文件中修改论文的基本信息：
 
@@ -81,14 +81,18 @@ university-typst-template/
 
 所有个人信息在这里只需修改一次，即可在封面和信息表格中全局生效。
 
-参考文献
+## 参考文献
 
 模板默认使用 GB/T 7714-2015 中文国标引用样式（numeric）。你只需要在references.bib(references.yml默认关闭) 文件中填入文献信息，并在正文中使用 #cite 引用即可。
 
-贡献指南
+## 贡献指南
 
 欢迎提交 Pull Request 或 Issue 来完善这个模板！无论是修复 Bug、改进样式还是补充文档，都感激不尽。
 
-许可证
+## 特殊方式
+- Github Action:
+ - 可以clone该项目，修改好内容后手动触发action获得包含PDF的压缩包（何意为？）
+
+## 许可证
 
 该项目基于 MIT 许可证开源。
