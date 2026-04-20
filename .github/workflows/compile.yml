@@ -25,11 +25,15 @@ jobs:
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
-      # 3. 编译 Typst 文件
+      # 3. 输出字体列表（以防万一）
+      - name: Check Available Fonts
+        run: typst fonts --font-path ./fonts
+
+      # 4. 编译 Typst 文件
       - name: Compile document
         run: typst compile --font-path ./fonts main.typ output.pdf
 
-      # 4. 上传编译好的 PDF 作为产物 (Artifact)
+      # 5. 上传编译好的 PDF 作为产物 (Artifact)
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
