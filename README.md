@@ -22,6 +22,8 @@
   - 安卓: 使用termux安装一个Linux环境再参照Linux教程使用
   - 验证安装：在终端中输入 typst -V，若显示版本号则说明安装成功。
   - VSCode 插件（推荐）：在 VSCode 扩展商店中搜索并安装 “Tinymit Typst”。它会在你保存代码时自动刷新 PDF 预览，带来类似 Typora 的写作体验。
+- 网页使用：
+  - 官方网站 https://typst.app/play/
 
 2. 获取模板
 
