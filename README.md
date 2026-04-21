@@ -59,17 +59,22 @@ typst compile --font-path ./fonts main.typ paper.pdf
 
 ```
 university-typst-template/
-├── main.typ           # 论文入口文件，用于引入模板并管理各章节
-├── template.typ       # 核心样式模板，控制全文字体、字号、间距与封面排版
-├── abstract.typ       # 论文摘要内容
-├── acknowledgments.typ# 致谢部分
-├── chapter*.typ       # 论文各章节（1至6章），具体内容可参考“绪论”示例
-├── references.yml     # 参考文献数据源（YAML格式）
-├── references.bib     # 参考文献数据源（BIB格式）
-├── logo.png           # 封面校徽图片
-├── fonts/             # 存放自定义字体文件的目录
-├── typst.toml         # 配置文件，用于设置自定义字体路径（如“fonts”目录）
-└── LICENSE            # 项目许可证
+├── .devcontainer/            # Codespaces 配置目录
+├── content/                  # 各章节内容文件
+│   ├── abstract.typ
+│   ├── acknowledgments.typ
+│   ├── chapter1.typ
+│   └── ...
+├── modules/                  # 自定义模块与函数
+│   └── utils.typ
+├── fonts/                    # 自定义字体目录
+├── main.typ                  # 论文入口文件
+├── template.typ              # 核心样式模板
+├── config.typ               # 集中管理元数据（建议新增）
+├── references.bib            # 文献数据库
+├── typst.toml                # 项目配置文件
+├── logo.png                  # 静态资源
+└── README.md
 ```
 
 ## 配置说明
