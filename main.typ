@@ -1,27 +1,23 @@
-#import "template.typ": conf
+#import "template.typ": template
+#import "config.typ": conf
+#import "/modules/utils.typ"
 
-// 以下部分用于优化展示，可以删除
-#import "@preview/tablex:0.0.9": cellx, tablex
-#import "@preview/codly:1.3.0": codly
-#import "@preview/codly-languages:0.1.10"
-
-// 请根据需求修改信息
-#show: doc => conf(
-  head: "主标题",
-  title: "副标题",
-  author: "小明",
-  student-id: "1145141314",
-  major: "宇宙社会学",
-  advisor: "罗",
-  date: "2026年 06月 01日",
+#show: doc => template(
   doc,
+  head: conf.head,
+  title: conf.title,
+  author: conf.author,
+  student-id: conf.student-id,
+  major: conf.major,
+  advisor: conf.supervisor,
+  date: conf.date,
 )
 
 // 前言部分（罗马数字页码）
 #set page(numbering: "I")
 #counter(page).update(1)
 
-#include "abstract.typ"
+#include "content\abstract.typ"
 
 #pagebreak()
 #outline(title: "目录", depth: 3)
@@ -32,12 +28,12 @@
 #counter(page).update(1)
 
 // 章节分文件，可根据需要增减
-#include "chapter1.typ"
-#include "chapter2.typ"
-#include "chapter3.typ"
-#include "chapter4.typ"
-#include "chapter5.typ"
-#include "chapter6.typ"
+#include "content\chapter1.typ"
+#include "content\chapter2.typ"
+#include "content\chapter3.typ"
+#include "content\chapter4.typ"
+#include "content\chapter5.typ"
+#include "content\chapter6.typ"
 
 // 引用文献，如果想快速全部引用可以启用参考文献部分的full: true并删除此部分
 #cite(label("ref1"), form: none)
