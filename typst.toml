@@ -10,9 +10,9 @@ keywords = ["thesis", "university", "chinese"]
 categories = ["thesis"]
 compiler = "0.13.0"
 exclude = [".devcontainer", "assets"]
-font-paths = ["fonts"]
+font-paths = ["resource/fonts"]
 
 [template]
 path = "."
 entrypoint = "main.typ"
-thumbnail = "resource/thumbnail.png"
+thumbnail = "thumbnail.png"
