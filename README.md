@@ -36,9 +36,9 @@
   git clone https://github.com/strangelion/university-typst-template.git
   ```
 -调用模板：
-```typst
+  ```typst
   #import "@preview/strangelion:0.1.0": *
-```
+  ```
 
 3. 编译论文
 
