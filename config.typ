@@ -16,6 +16,6 @@
   supervisor: (name: "指导教师", value: "罗教授", visible: true, depth: 13), //指导教师姓名,supervisor name
   date: (name: "日期", value: datetime.today().display("[year]年[month]月[day]日"), visible: true, depth: 14), //日期，默认为当天日期，可以根据需要修改,date, default is today's date, you can modify it as needed
   info-order: (4, 6, 7, 13, 10, 9, 11),
-  //显示信息的顺序，可以根据需要调整顺序，数字对应上面 conf 中字段的 depth 值
-  //The order of displayed information can be adjusted as needed, the numbers correspond to the depth values of the fields in conf above
+  //显示信息的顺序，可以根据需要调整顺序，数字对应上面 conf 中字段的 depth 值，默认1->3,14不会显示在封面文章信息上（即字段映射表中）。
+  //The order of displayed information can be adjusted as needed, the numbers correspond to the depth values of the fields in conf above, by default it is 1->3,14 will not be displayed on the cover article information (that is, in the field mapping table).
 )
