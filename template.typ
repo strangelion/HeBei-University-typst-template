@@ -27,7 +27,7 @@
   class: (name: none, value: none, visible: none, depth: none),
   major: (name: none, value: none, visible: none, depth: none),
   supervisor: (name: none, value: none, visible: none, depth: none),
-  date: (name: none, value: datetime.today().display("[year]年[month]月[day]日"), visible: true, depth: none),
+  date: (name: none, value: datetime.today().display("[year]年[month]月[day]日"), visible: none, depth: none),
   info-order: none,
   add-on: none,
 ) = {
@@ -65,36 +65,17 @@
     ]
   }
 
+  import "config.typ": evaluation-data, evaluation-style
   if 2 in add-on {
-    // 2. 在封面右上角添加 3x6 小表格
     place(top + right, dx: 1cm, dy: -2.4cm)[
       #align(right)[
-        #set text(size: 9pt)
+        #set text(size: evaluation-style.text-size)
         #table(
-          align: (left, left, left), // 右对齐且无额外间距
-          columns: (60pt, 60pt, 60pt), // 缩窄列宽
-          rows: 2.5pt * 6, // 缩短行高
-          stroke: 0.4pt, // 细边框
-          ..(
-            [评价指标],
-            [分值],
-            [得分],
-            [题名、摘要],
-            [25],
-            [],
-            [正文],
-            [45],
-            [],
-            [图表与公式],
-            [20],
-            [],
-            [参考文献],
-            [10],
-            [],
-            [总分],
-            [100],
-            [],
-          )
+          align: left,
+          columns: evaluation-style.columns,
+          stroke: evaluation-style.stroke,
+          // 使用 .. 展开操作符将数组内容填入表格
+          ..evaluation-data
         )
       ]
     ]
