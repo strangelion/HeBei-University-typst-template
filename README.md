@@ -35,7 +35,7 @@
   ```bash
   git clone https://github.com/strangelion/university-typst-template.git
   ```
--调用模板：（暂时还未合并）
+-调用模板：
   ```typst
   #import "@preview/strangelion:0.1.0": *
   ```
